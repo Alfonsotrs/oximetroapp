@@ -1,0 +1,26 @@
+diff --git a/node_modules/react-native-bluetooth-classic/android/build.gradle b/node_modules/react-native-bluetooth-classic/android/build.gradle
+index 0daf907..22ee17a 100644
+--- a/node_modules/react-native-bluetooth-classic/android/build.gradle
++++ b/node_modules/react-native-bluetooth-classic/android/build.gradle
+@@ -16,8 +16,7 @@ def getExtOrDefault(name, fallback) {
+ }
+ 
+ android {
+-    // Check AGP version for backward compatibility w/react-native versions still on gradle plugin 6
+-    // it looks like this causes issues between 7 and 8, so for the time being 
++
+     def agpVersion = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION    
+     if (agpVersion.tokenize('.')[0].toInteger() >= 7) {
+         namespace = "kjd.reactnative.bluetooth"
+@@ -26,6 +25,11 @@ android {
+     compileSdkVersion getExtOrDefault('compileSdkVersion', 34)
+     buildToolsVersion getExtOrDefault('buildToolsVersion', "34.0.0")
+ 
++    // ---> AGREGAR ESTO <---
++    buildFeatures {
++        buildConfig = true
++    }
++
+     defaultConfig {
+         minSdkVersion getExtOrDefault('minSdkVersion', 16)
+         targetSdkVersion getExtOrDefault('targetSdkVersion', 34)

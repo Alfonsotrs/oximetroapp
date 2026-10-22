@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "oximetroapp",
+    "slug": "oximetroapp",
+    "scheme": "oximetroapp",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 37,
+            "targetSdkVersion": 37,
+            "minSdkVersion": 24
+          }
+        }
+      ]
+    ],
+    "android": {
+      "package": "com.tuusuario.oximetroapp",
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "1a62c0a5-d81d-4279-ad5a-2b2c6a963b43"
+      }
+    }
+  }
+}
